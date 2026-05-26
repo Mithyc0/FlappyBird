@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dn7ri5h1uu4ta"]
+
+[ext_resource type="Script" uid="uid://bava7y1kh783s" path="res://scripts/player.gd" id="1_dqkch"]
+[ext_resource type="Texture2D" uid="uid://dg46slxosgk62" path="res://assets/Game Objects/yellowbird-downflap.png" id="1_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://ccnh8s5mv0njx" path="res://assets/Game Objects/yellowbird-midflap.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://nvgos3n23ttb" path="res://assets/Game Objects/yellowbird-upflap.png" id="3_qlg0r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("1_qhqgy")
+region = Rect2(0, 0, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 0, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("3_qlg0r")
+region = Rect2(0, 0, 34, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ur7pv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4r1p"]
+radius = 11.0
+
+[node name="Player" type="CharacterBody2D" unique_id=2036058875]
+script = ExtResource("1_dqkch")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=749927187]
+sprite_frames = SubResource("SpriteFrames_ur7pv")
+autoplay = "default"
+frame_progress = 0.7972584
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1541867437]
+shape = SubResource("CircleShape2D_y4r1p")

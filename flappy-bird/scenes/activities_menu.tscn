@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dnrrrycw2s7hc"]
+
+[ext_resource type="Script" uid="uid://cy2suflqfwg4r" path="res://scripts/activities_menu.gd" id="1_ibnu2"]
+
+[node name="ActivitiesMenu" type="Control" unique_id=1926743432]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ibnu2")
+
+[node name="Label" type="Label" parent="." unique_id=1438761216]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=232288964]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1066930517]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Atividade3e4" type="Button" parent="VBoxContainer/GridContainer" unique_id=66756746]
+layout_mode = 2
+text = "Atividade 3 & 4
+
+"
+
+[node name="Atividade8" type="Button" parent="VBoxContainer/GridContainer" unique_id=1183973256]
+layout_mode = 2
+text = "Atividade 8"
+
+[node name="Atividade 9" type="Button" parent="VBoxContainer/GridContainer" unique_id=753809547]
+layout_mode = 2
+text = "Atividade 9"
+
+[node name="Voltar" type="Button" parent="VBoxContainer/GridContainer" unique_id=1926848371]
+layout_mode = 2
+text = "Voltar"
+
+[connection signal="pressed" from="VBoxContainer/GridContainer/Atividade3e4" to="." method="_on_atividade_3e_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Atividade8" to="." method="_on_atividade_8_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Atividade 9" to="." method="_on_atividade_9_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Voltar" to="." method="_on_voltar_pressed"]

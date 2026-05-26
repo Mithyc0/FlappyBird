@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://d3l0lw4xvqjtt"]
+
+[ext_resource type="Script" uid="uid://cmf4d8b3gvpi2" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control" unique_id=422768070]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_l6cm7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1191256025]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1813298324]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -29.5
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1359011292]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Flappy Bird"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1121037040]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 3
+
+[node name="Start" type="Button" parent="VBoxContainer/GridContainer" unique_id=1421044120]
+layout_mode = 2
+text = "Start Game
+
+"
+
+[node name="Activities" type="Button" parent="VBoxContainer/GridContainer" unique_id=2074374254]
+layout_mode = 2
+text = "Atividades"
+
+[node name="Leave" type="Button" parent="VBoxContainer/GridContainer" unique_id=67651756]
+layout_mode = 2
+text = "Sair
+"
+
+[connection signal="pressed" from="VBoxContainer/GridContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Activities" to="." method="_on_activities_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Leave" to="." method="_on_leave_pressed"]

@@ -1,0 +1,62 @@
+[gd_scene format=4 uid="uid://dp8evae6npb5o"]
+
+[ext_resource type="PackedScene" uid="uid://dn7ri5h1uu4ta" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://chch6ive7aiir" path="res://assets/Game Objects/base.png" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://4s3cii00fxsd" path="res://scenes/killzone.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://36odbl4kn02w" path="res://Atividade 3/progress_bar.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cltx6f7ybn8la" path="res://scenes/coin.tscn" id="5_iywne"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
+texture = ExtResource("2_yqjtg")
+texture_region_size = Vector2i(336, 56)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-168, -28, 168, -28, 168, 28, -168, 28)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-168.29451, -25.408096, 168.84091, -25.408096, 168.84091, 29.232971, -167.20169, 29.779388)
+
+[sub_resource type="TileSet" id="TileSet_lbhrr"]
+tile_size = Vector2i(333, 56)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lnu2h")
+
+[node name="Game" type="Node2D" unique_id=1350848820]
+metadata/_edit_horizontal_guides_ = [230.0]
+
+[node name="Player" parent="." unique_id=2036058875 instance=ExtResource("1_uwrxv")]
+position = Vector2(2, -129)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1712975858]
+position_smoothing_enabled = true
+
+[node name="ProgressBar" parent="Player/Camera2D" unique_id=2024534453 instance=ExtResource("4_lbhrr")]
+offset_left = -577.0
+offset_top = -202.0
+offset_right = -577.0
+offset_bottom = -202.0
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Killzone" parent="." unique_id=368414887 instance=ExtResource("3_lnu2h")]
+position = Vector2(-2, 134)
+priority = 1
+
+[node name="Layers" type="Node2D" parent="." unique_id=226803156]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Layers" unique_id=486757565]
+position = Vector2(-36, 194)
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAD+////AAAAAAAAAAD9////AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAACAAEAAAAAAAEAAAADAAEAAAAAAAEAAAABAAEAAAAAAAEAAAAAAAEAAAAAAAEAAAD//wEAAAAAAAEAAAD//wAAAAAAAAEAAAAAAAAAAAAAAAEAAAD+/wAAAAAAAAEAAAD+/wEAAAAAAAEAAAD9/wAAAAAAAAEAAAD9/wEAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAAAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAAAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAAAAAAAAAEAAAAHAAEAAAAAAAEAAAAIAAAAAAAAAAEAAAAIAAEAAAAAAAEAAAAJAAAAAAAAAAEAAAAJAAEAAAAAAAEAAAAKAAAAAAAAAAEAAAAKAAEAAAAAAAEAAAALAAAAAAAAAAEAAAALAAEAAAAAAAEAAAAMAAAAAAAAAAEAAAAMAAEAAAAAAAEAAAANAAAAAAAAAAEAAAANAAEAAAAAAAEAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lbhrr")
+
+[node name="Coin" parent="." unique_id=1459441643 instance=ExtResource("5_iywne")]
+position = Vector2(282, -138)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin3" parent="." unique_id=419227405 instance=ExtResource("5_iywne")]
+position = Vector2(596, -63.000008)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin2" parent="." unique_id=974806406 instance=ExtResource("5_iywne")]
+position = Vector2(853, -204)
+scale = Vector2(0.2, 0.2)

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://uns2lr3lfvin"]
+
+[ext_resource type="Script" uid="uid://copqlf8qvexk2" path="res://Atividade8/calculadora.gd" id="1_h0d6b"]
+
+[node name="Calculadora" type="Control" unique_id=1083513500]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h0d6b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1525573393]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -66.0
+offset_right = 46.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Input1" type="LineEdit" parent="VBoxContainer" unique_id=1404332420]
+layout_mode = 2
+placeholder_text = "Primeiro Número"
+expand_to_text_length = true
+
+[node name="Input2" type="LineEdit" parent="VBoxContainer" unique_id=576979904]
+layout_mode = 2
+placeholder_text = "Segundo Número"
+expand_to_text_length = true
+
+[node name="Resultado" type="Label" parent="VBoxContainer" unique_id=606326894]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1903943306]
+layout_mode = 2
+alignment = 1
+
+[node name="Soma" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1091417981]
+layout_mode = 2
+text = "➕"
+
+[node name="Subtração" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1675396119]
+layout_mode = 2
+text = "➖"
+
+[node name="Multiplicação" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=157752824]
+layout_mode = 2
+text = "✖️"
+
+[node name="Divisão" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1926602635]
+layout_mode = 2
+text = "➗"
+
+[node name="Info" type="Label" parent="VBoxContainer" unique_id=1264279360]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Soma" to="." method="_on_soma_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Subtração" to="." method="_on_subtração_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Multiplicação" to="." method="_on_multiplicação_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Divisão" to="." method="_on_divisão_pressed"]
